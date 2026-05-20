@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greeneville Party Rentals — Tables, Chairs, Tents & More | Greeneville, TN</title>
+<meta name="description" content="Affordable table, chair, tent, and lawn game rentals for events in Greeneville, TN and Greene County. Call or text (601) 819-0397.">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2d4a35;
+    --forest-mid: #3d6349;
+    --sage: #7a9e82;
+    --sage-light: #b8d4bc;
+    --cream: #faf7f2;
+    --warm: #f3ede3;
+    --tan: #d6c9b4;
+    --brown: #7a6348;
+    --gold: #c08a3a;
+    --gold-light: #e0b060;
+    --dark: #1e2d22;
+    --white: #ffffff;
+    --text: #2e2e2e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(29, 45, 34, 0.97);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 64px;
+    border-bottom: 1px solid rgba(192,138,58,0.3);
+  }
+  .nav-logo {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    color: var(--cream);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--gold-light); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(250,247,242,0.75);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--dark) !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    color: #fff !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--dark) !important; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: var(--forest);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 64px;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 40%, rgba(122,158,130,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(192,138,58,0.12) 0%, transparent 50%);
+  }
+  /* Tennessee mountain silhouette */
+  .hero-mountains {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 180px;
+    opacity: 0.12;
+  }
+  .hero-texture {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(192,138,58,0.2);
+    border: 1px solid rgba(192,138,58,0.4);
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    color: var(--cream);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero-sub {
+    color: rgba(250,247,242,0.7);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: #fff;
+    padding: 0.85rem 1.8rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1.5px solid rgba(250,247,242,0.4);
+    color: var(--cream);
+    padding: 0.85rem 1.8rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--cream); background: rgba(255,255,255,0.07); }
+
+  /* Hero card */
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(6px);
+    animation: fadeUp 0.7s 0.35s ease both;
+  }
+  .hero-card h3 {
+    font-family: 'Lora', serif;
+    color: var(--gold-light);
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .quick-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+  }
+  .quick-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgba(250,247,242,0.82);
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .quick-item .dot {
+    width: 6px; height: 6px;
+    background: var(--sage);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .hero-card-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--cream);
+    font-size: 0.9rem;
+  }
+  .hero-card-footer strong { color: var(--gold-light); font-size: 1rem; }
+
+  /* ===== SECTION SHARED ===== */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-tag {
+    display: inline-block;
+    color: var(--forest-mid);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .section-tag::before, .section-tag::after {
+    content: '—';
+    margin: 0 0.5rem;
+    color: var(--tan);
+  }
+  h2.section-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+  .section-subtitle {
+    margin-top: 0.8rem;
+    color: var(--brown);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* ===== WHY US ===== */
+  .why-section { background: var(--white); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .why-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    background: var(--cream);
+    border: 1px solid var(--tan);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .why-card:hover { box-shadow: 0 8px 24px rgba(45,74,53,0.1); transform: translateY(-3px); }
+  .why-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .why-card h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--forest);
+  }
+  .why-card p { font-size: 0.87rem; color: var(--brown); line-height: 1.6; }
+
+  /* ===== INVENTORY ===== */
+  .inventory-section { background: var(--warm); }
+  .inv-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .inv-tab {
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    border: 1.5px solid var(--tan);
+    background: transparent;
+    color: var(--brown);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .inv-tab:hover, .inv-tab.active {
+    background: var(--forest);
+    border-color: var(--forest);
+    color: #fff;
+  }
+  .inv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  .inv-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.3rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--tan);
+    transition: box-shadow 0.2s;
+  }
+  .inv-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  .inv-left { display: flex; align-items: center; gap: 0.9rem; }
+  .inv-emoji { font-size: 1.5rem; }
+  .inv-name { font-weight: 600; font-size: 0.92rem; color: var(--dark); }
+  .inv-qty { font-size: 0.76rem; color: var(--brown); margin-top: 0.15rem; }
+  .inv-price {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--forest-mid);
+    text-align: right;
+  }
+  .inv-price small {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--brown);
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== PACKAGES ===== */
+  .packages-section { background: var(--forest); }
+  .packages-section .section-tag { color: var(--sage-light); }
+  .packages-section .section-tag::before,
+  .packages-section .section-tag::after { color: rgba(255,255,255,0.2); }
+  .packages-section h2.section-title { color: var(--cream); }
+  .packages-section .section-subtitle { color: var(--sage-light); }
+  .pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .pkg {
+    border-radius: 10px;
+    padding: 2rem;
+    position: relative;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pkg:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
+  .pkg.featured {
+    border-color: var(--gold);
+    background: rgba(192,138,58,0.1);
+  }
+  .pkg-label {
+    position: absolute;
+    top: -1px; right: 1.5rem;
+    background: var(--gold);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0 0 4px 4px;
+  }
+  .pkg-name {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+  }
+  .pkg-desc { font-size: 0.82rem; color: var(--sage-light); margin-bottom: 1.2rem; }
+  .pkg-list {
+    list-style: none;
+    margin-bottom: 1.8rem;
+  }
+  .pkg-list li {
+    font-size: 0.88rem;
+    color: rgba(250,247,242,0.8);
+    padding: 0.3rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .pkg-list li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .pkg-cost {
+    font-family: 'Lora', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+  }
+  .pkg-cost span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: 'Nunito', sans-serif;
+    color: var(--sage-light);
+  }
+  .pkg-cta {
+    display: block;
+    margin-top: 1.2rem;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    color: var(--cream);
+  }
+  .pkg.featured .pkg-cta {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
+  }
+  .pkg-cta:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
+
+  /* ===== AREA ===== */
+  .area-section { background: var(--white); }
+  .area-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .area-map-placeholder {
+    background: var(--warm);
+    border: 2px solid var(--tan);
+    border-radius: 10px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    color: var(--brown);
+  }
+  .area-map-placeholder .map-pin { font-size: 3rem; }
+  .area-map-placeholder p { font-size: 0.9rem; font-weight: 600; }
+  .area-map-placeholder small { font-size: 0.78rem; opacity: 0.7; }
+  .area-text h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+  .area-text p { color: var(--brown); line-height: 1.7; margin-bottom: 1rem; font-size: 0.95rem; }
+  .area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+  .area-tag {
+    background: var(--warm);
+    border: 1px solid var(--tan);
+    border-radius: 3px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--forest);
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-section { background: var(--cream); }
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-info h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+  .contact-info p { color: var(--brown); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .contact-methods { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: var(--white);
+    border: 1px solid var(--tan);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--dark);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .contact-method:hover { border-color: var(--forest); box-shadow: 0 4px 12px rgba(45,74,53,0.1); }
+  .contact-method-icon {
+    width: 42px; height: 42px;
+    background: var(--warm);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .contact-method-text strong {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brown);
+    margin-bottom: 0.15rem;
+  }
+  .contact-method-text span { font-size: 1rem; font-weight: 600; color: var(--forest); }
+
+  /* Form */
+  .contact-form {
+    background: var(--white);
+    border: 1px solid var(--tan);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .contact-form h4 {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brown);
+    margin-bottom: 0.4rem;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--tan);
+    border-radius: 6px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.92rem;
+    color: var(--dark);
+    background: var(--cream);
+    transition: border-color 0.2s;
+    outline: none;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--forest); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-submit {
+    width: 100%;
+    background: var(--forest);
+    color: #fff;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 6px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--forest-mid); }
+  .form-note { font-size: 0.75rem; color: var(--brown); text-align: center; margin-top: 0.6rem; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark);
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .footer-logo span { color: var(--gold-light); }
+  footer p { color: rgba(250,247,242,0.45); font-size: 0.8rem; margin-top: 0.5rem; }
+  footer a { color: var(--gold-light); text-decoration: none; }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-card { display: none; }
+    .area-inner, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 3.5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Greeneville <span>Party Rentals</span></div>
+  <ul class="nav-links">
+    <li><a href="#inventory">Inventory</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#area">Service Area</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <svg class="hero-mountains" viewBox="0 0 1200 180" preserveAspectRatio="none" fill="rgba(255,255,255,1)">
+    <path d="M0,180 L0,120 L80,60 L160,100 L260,30 L360,90 L440,50 L540,110 L640,40 L720,85 L820,20 L920,75 L1020,45 L1120,90 L1200,55 L1200,180 Z"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">📍 Greeneville, Tennessee</div>
+      <h1>Make Your Next Event <em>Unforgettable</em></h1>
+      <p class="hero-sub">Tables, chairs, tents, lawn games & more — delivered and set up in Greene County. Local, affordable, and ready for your party.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Get a Free Quote</a>
+        <a href="tel:6018190397" class="btn-outline">📞 Call or Text Us</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>What We Rent</h3>
+      <div class="quick-items">
+        <div class="quick-item"><div class="dot"></div> White &amp; Black Chairs</div>
+        <div class="quick-item"><div class="dot"></div> Round &amp; Rect. Tables</div>
+        <div class="quick-item"><div class="dot"></div> 10×10 &amp; 10×20 Tents</div>
+        <div class="quick-item"><div class="dot"></div> Wooden Arch</div>
+        <div class="quick-item"><div class="dot"></div> Yard Jenga (×2)</div>
+        <div class="quick-item"><div class="dot"></div> Giant Connect Four</div>
+        <div class="quick-item"><div class="dot"></div> Bocce Ball (×2)</div>
+        <div class="quick-item"><div class="dot"></div> Cornhole &amp; Horseshoes</div>
+      </div>
+      <div class="hero-card-footer">
+        <span>📞</span>
+        <div>Call or text <strong>(601) 819-0397</strong> for availability</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title">Locally Owned, Greene County Proud</h2>
+      <p class="section-subtitle">We're your neighbors — not a big corporate rental company.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">🏡</span>
+        <h3>Local & Personal</h3>
+        <p>Based right here in Greeneville. When you call, you talk to the owner — not a call center.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">💰</span>
+        <h3>Honest Pricing</h3>
+        <p>No hidden fees. Straightforward day rates so you know exactly what you're paying upfront.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🚚</span>
+        <h3>Delivery Available</h3>
+        <p>We'll deliver and pick up throughout Greene County. Just ask about delivery when you book.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🎉</span>
+        <h3>Everything You Need</h3>
+        <p>From chairs and tables to lawn games and arches — one stop for your whole event setup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVENTORY -->
+<section class="inventory-section" id="inventory">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">What We Have</div>
+      <h2 class="section-title">Rental Inventory & Pricing</h2>
+      <p class="section-subtitle">All prices are per day. Contact us about multi-day discounts.</p>
+    </div>
+    <div class="inv-tabs">
+      <button class="inv-tab active" onclick="filterInv('all', this)">All Items</button>
+      <button class="inv-tab" onclick="filterInv('seating', this)">Seating</button>
+      <button class="inv-tab" onclick="filterInv('tables', this)">Tables</button>
+      <button class="inv-tab" onclick="filterInv('canopy', this)">Tents & Décor</button>
+      <button class="inv-tab" onclick="filterInv('games', this)">Lawn Games</button>
+    </div>
+    <div class="inv-grid" id="invGrid">
+      <div class="inv-card" data-cat="seating">
+        <div class="inv-left"><span class="inv-emoji">🤍</span><div><div class="inv-name">White Chairs</div><div class="inv-qty">30 available</div></div></div>
+        <div class="inv-price">$2<small>/ each / day</small></div>
+      </div>
+      <div class="inv-card" data-cat="seating">
+        <div class="inv-left"><span class="inv-emoji">🖤</span><div><div class="inv-name">Black Chairs</div><div class="inv-qty">21 available</div></div></div>
+        <div class="inv-price">$2<small>/ each / day</small></div>
+      </div>
+      <div class="inv-card" data-cat="tables">
+        <div class="inv-left"><span class="inv-emoji">⭕</span><div><div class="inv-name">Round Wooden Tables</div><div class="inv-qty">7 available</div></div></div>
+        <div class="inv-price">$15<small>/ each / day</small></div>
+      </div>
+      <div class="inv-card" data-cat="tables">
+        <div class="inv-left"><span class="inv-emoji">📏</span><div><div class="inv-name">6-Foot Tables</div><div class="inv-qty">5 available</div></div></div>
+        <div class="inv-price">$10<small>/ each / day</small></div>
+      </div>
+      <div class="inv-card" data-cat="tables">
+        <div class="inv-left"><span class="inv-emoji">📐</span><div><div class="inv-name">8-Foot Tables</div><div class="inv-qty">3 available</div></div></div>
+        <div class="inv-price">$12<small>/ each / day</small></div>
+      </div>
+      <div class="inv-card" data-cat="canopy">
+        <div class="inv-left"><span class="inv-emoji">🏕️</span><div><div class="inv-name">10×10 Canopy Tent</div><div class="inv-qty">1 available</div></div></div>
+        <div class="inv-price">$45<small>/ day</small></div>
+      </div>
+      <div class="inv-card" data-cat="canopy">
+        <div class="inv-left"><span class="inv-emoji">⛺</span><div><div class="inv-name">10×20 Canopy Tent</div><div class="inv-qty">1 available</div></div></div>
+        <div class="inv-price">$75<small>/ day</small></div>
+      </div>
+      <div class="inv-card" data-cat="canopy">
+        <div class="inv-left"><span class="inv-emoji">🌿</span><div><div class="inv-name">Wooden Arch</div><div class="inv-qty">1 available</div></div></div>
+        <div class="inv-price">$50<small>/ day</small></div>
+      </div>
+      <div class="inv-card" data-cat="games">
+        <div class="inv-left"><span class="inv-emoji">🧱</span><div><div class="inv-name">Yard Jenga (Giant)</div><div class="inv-qty">2 available</div></div></div>
+        <div class="inv-price">$25<small>/ each / day</small></div>
+      </div>
+      <div class="inv-card" data-cat="games">
+        <div class="inv-left"><span class="inv-emoji">🎱</span><div><div class="inv-name">Bocce Ball Set</div><div class="inv-qty">2 available</div></div></div>
+        <div class="inv-price">$20<small>/ each / day</small></div>
+      </div>
+      <div class="inv-card" data-cat="games">
+        <div class="inv-left"><span class="inv-emoji">🔴</span><div><div class="inv-name">Yard Connect Four</div><div class="inv-qty">1 available</div></div></div>
+        <div class="inv-price">$25<small>/ day</small></div>
+      </div>
+      <div class="inv-card" data-cat="games">
+        <div class="inv-left"><span class="inv-emoji">🐴</span><div><div class="inv-name">Horseshoe Set</div><div class="inv-qty">1 available</div></div></div>
+        <div class="inv-price">$15<small>/ day</small></div>
+      </div>
+      <div class="inv-card" data-cat="games">
+        <div class="inv-left"><span class="inv-emoji">🌽</span><div><div class="inv-name">Cornhole Set</div><div class="inv-qty">1 available</div></div></div>
+        <div class="inv-price">$20<small>/ day</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section" id="packages">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Bundle & Save</div>
+      <h2 class="section-title">Event Packages</h2>
+      <p class="section-subtitle">Mix and match or choose a ready-made bundle — custom quotes always available.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pkg-name">Backyard Bash</div>
+        <div class="pkg-desc">Perfect for birthday parties, cookouts & casual gatherings</div>
+        <ul class="pkg-list">
+          <li>20 chairs (white or black)</li>
+          <li>4 round wooden tables</li>
+          <li>10×10 canopy tent</li>
+          <li>Cornhole set</li>
+        </ul>
+        <div class="pkg-cost">$130 <span>/ day</span></div>
+        <a href="#contact" class="pkg-cta">Book This Package</a>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-label">Most Popular</div>
+        <div class="pkg-name">Full Party Package</div>
+        <div class="pkg-desc">Ideal for weddings, graduation parties & large events</div>
+        <ul class="pkg-list">
+          <li>40 chairs (mix of white & black)</li>
+          <li>5 round + 3 rectangular tables</li>
+          <li>10×20 canopy tent</li>
+          <li>Wooden arch</li>
+          <li>2 lawn games of your choice</li>
+        </ul>
+        <div class="pkg-cost">$295 <span>/ day</span></div>
+        <a href="#contact" class="pkg-cta">Book This Package</a>
+      </div>
+      <div class="pkg">
+        <div class="pkg-name">Game Day Bundle</div>
+        <div class="pkg-desc">Great for reunions, tailgates & outdoor festivals</div>
+        <ul class="pkg-list">
+          <li>All 5 lawn games</li>
+          <li>5 rectangular tables</li>
+          <li>10×10 canopy tent</li>
+          <li>20 chairs</li>
+        </ul>
+        <div class="pkg-cost">$175 <span>/ day</span></div>
+        <a href="#contact" class="pkg-cta">Book This Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area-section" id="area">
+  <div class="container">
+    <div class="area-inner">
+      <div class="area-map-placeholder">
+        <span class="map-pin">📍</span>
+        <p>Greeneville, TN</p>
+        <small>Serving Greene County & surrounding areas</small>
+      </div>
+      <div class="area-text">
+        <h3>We Come to You</h3>
+        <p>Based in Greeneville, we deliver across Greene County and into surrounding areas. Whether you're hosting in town, on a farm, or at an outdoor venue in the hills — we'll get your setup there.</p>
+        <p>Delivery fees start at <strong>$25–$50</strong> depending on your location. Give us a call and we'll give you an exact quote for your address.</p>
+        <div class="area-tags">
+          <span class="area-tag">Greeneville</span>
+          <span class="area-tag">Tusculum</span>
+          <span class="area-tag">Mosheim</span>
+          <span class="area-tag">Baileyton</span>
+          <span class="area-tag">Chuckey</span>
+          <span class="area-tag">Afton</span>
+          <span class="area-tag">+ surrounding areas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Get in Touch</div>
+      <h2 class="section-title">Request a Free Quote</h2>
+      <p class="section-subtitle">We'll get back to you fast — usually within a few hours.</p>
+    </div>
+    <div class="contact-inner">
+      <div class="contact-info">
+        <h3>Reach Out Anytime</h3>
+        <p>Call, text, or email — whatever works best for you. We're a local business and we actually pick up.</p>
+        <div class="contact-methods">
+          <a href="tel:6018190397" class="contact-method">
+            <div class="contact-method-icon">📞</div>
+            <div class="contact-method-text">
+              <strong>Call or Text</strong>
+              <span>(601) 819-0397</span>
+            </div>
+          </a>
+          <a href="mailto:gvillepartyrentals@gmail.com" class="contact-method">
+            <div class="contact-method-icon">✉️</div>
+            <div class="contact-method-text">
+              <strong>Email</strong>
+              <span>gvillepartyrentals@gmail.com</span>
+            </div>
+          </a>
+          <div class="contact-method">
+            <div class="contact-method-icon">📍</div>
+            <div class="contact-method-text">
+              <strong>Location</strong>
+              <span>Greeneville, TN 37743</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h4>Send Us a Message</h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="Jane Smith">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(423) 555-0100">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="jane@email.com">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Event Date</label>
+            <input type="date">
+          </div>
+          <div class="form-group">
+            <label>Event Type</label>
+            <select>
+              <option value="">Select one...</option>
+              <option>Birthday Party</option>
+              <option>Wedding / Reception</option>
+              <option>Graduation Party</option>
+              <option>Family Reunion</option>
+              <option>Corporate Event</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>What do you need?</label>
+          <textarea placeholder="Tell us what items you're interested in, how many guests, and your event location..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm(this)">Send Quote Request</button>
+        <p class="form-note">Or text us directly at (601) 819-0397 — we respond fast!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Greeneville <span>Party Rentals</span></div>
+  <p>Greeneville, TN · <a href="tel:6018190397">(601) 819-0397</a> · <a href="mailto:gvillepartyrentals@gmail.com">gvillepartyrentals@gmail.com</a></p>
+  <p style="margin-top:0.8rem;">© 2025 Greeneville Party Rentals. All rights reserved.</p>
+</footer>
+
+<script>
+  function filterInv(cat, btn) {
+    document.querySelectorAll('.inv-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.inv-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
+    });
+  }
+
+  function submitForm(btn) {
+    btn.textContent = '✓ Message Sent! We\'ll be in touch soon.';
+    btn.style.background = '#4a7c59';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
